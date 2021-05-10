@@ -19,7 +19,7 @@ const createManager = () => {
             type: 'input',
             name: 'name',
             message: 'Provide a manager for this team:',
-            confirm: nameInput => {
+            validate: nameInput => {
                 if(nameInput){
                     return true;
                 }else {
@@ -32,7 +32,7 @@ const createManager = () => {
             type: 'input',
             name: 'id',
             message: "Please provide an ID for the manager:",
-            confirm: idInput => {
+            validate: idInput => {
                 if (isNaN(idInput)){
                     console.log("An ID is required for the manager!");
                     return false;
@@ -45,7 +45,7 @@ const createManager = () => {
             type: 'input',
             name: 'email',
             message: "Please provide an email for the manager:",
-            confirm: email => {
+            validate: email => {
                 valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
                 if(valid){
                     return true;
@@ -59,7 +59,7 @@ const createManager = () => {
             type: 'input',
             name: 'officeNumber',
             message: "Please provide an office number:",
-            confirm: offNumInput => {
+            validate: offNumInput => {
                 if (isNaN(offNumInput)){
                     console.log("Please provide an office number:")
                     return false;
@@ -95,7 +95,7 @@ const addEmployee = () => {
             type: 'input',
             name: 'role',
             message: "What's the employee's name?",
-            confirm: nameInput => {
+            validate: nameInput => {
                 if (nameInput) {
                     return true;                
                 }else {
@@ -108,7 +108,7 @@ const addEmployee = () => {
             type: 'input',
             name: 'id',
             message: "Please provide an employee ID:",
-            confirm: idInput => {
+            validate: idInput => {
                 if (isNaN(idInput)){
                     console.log("Please enter an employee ID:");
                     return false;
@@ -121,7 +121,7 @@ const addEmployee = () => {
             type: 'input',
             name: 'email',
             message: "Please enter the employee's email.",
-            confirm: email => {
+            validate: email => {
                 valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
                 if (valid) {
                     return true;
@@ -136,7 +136,7 @@ const addEmployee = () => {
             name: 'github',
             message: "Please enter the employee's github username.",
             when: (input) => input.role === "Engineer",
-            confirm: githubInput => {
+            validate: githubInput => {
                 if (githubInput ) {
                     return true;
                 } else {
@@ -149,7 +149,7 @@ const addEmployee = () => {
             name: 'school',
             message: "Please enter the intern's school",
             when: (input) => input.role === "Intern",
-            confirm: schoolInput => {
+            validate: schoolInput => {
                 if (schoolInput) {
                     return true;
                 } else {
