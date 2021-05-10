@@ -1,0 +1,28 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "command line app that generates a team profile",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhknowledge/teamProfileGenerator.git"
+  },
+  "author": "Muhammed Hassan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mhknowledge/teamProfileGenerator/issues"
+  },
+  "homepage": "https://github.com/mhknowledge/teamProfileGenerator#readme",
+  "devDependencies": {
+    "jest": "^26.0.1"
+  },
+  "dependencies": {
+    "inquirer": "^7.1.0"
+  }
+}
