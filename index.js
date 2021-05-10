@@ -15,7 +15,8 @@ const team = [];
 //prompt user for input:
 const createManager = () => {
     return inquirer.prompt(
-        [{
+        [
+            {
             type: 'input',
             name: 'name',
             message: 'Provide a manager for this team:',
@@ -32,8 +33,8 @@ const createManager = () => {
             type: 'input',
             name: 'id',
             message: "Please provide an ID for the manager:",
-            validate: idInput => {
-                if (isNaN(idInput)){
+            validate: nameInput => {
+                if (isNaN(nameInput)){
                     console.log("An ID is required for the manager!");
                     return false;
                 }else {
@@ -59,8 +60,8 @@ const createManager = () => {
             type: 'input',
             name: 'officeNumber',
             message: "Please provide an office number:",
-            validate: offNumInput => {
-                if (isNaN(offNumInput)){
+            validate: nameInput => {
+                if (isNaN(nameInput)){
                     console.log("Please provide an office number:")
                     return false;
                 }else {
@@ -78,7 +79,7 @@ const createManager = () => {
     })
 };
 
-const addEmployee = () => {
+const createEmployee = () => {
     console.log(` =================
     Adding employees to the team
     =================
@@ -89,7 +90,7 @@ const addEmployee = () => {
             type: 'list',
             name: 'role',
             message: "Please select an employee role:",
-            options: ['Engineer', 'Intern']
+            choices: ['Engineer', 'Intern']
         },
         {
             type: 'input',
@@ -108,8 +109,8 @@ const addEmployee = () => {
             type: 'input',
             name: 'id',
             message: "Please provide an employee ID:",
-            validate: idInput => {
-                if (isNaN(idInput)){
+            validate: nameInput => {
+                if (isNaN(nameInput)){
                     console.log("Please enter an employee ID:");
                     return false;
                 }else {
@@ -136,8 +137,8 @@ const addEmployee = () => {
             name: 'github',
             message: "Please enter the employee's github username.",
             when: (input) => input.role === "Engineer",
-            validate: githubInput => {
-                if (githubInput ) {
+            validate: nameInput => {
+                if (nameInput ) {
                     return true;
                 } else {
                     console.log ("Please enter the employee's github username!")
@@ -149,8 +150,8 @@ const addEmployee = () => {
             name: 'school',
             message: "Please enter the intern's school",
             when: (input) => input.role === "Intern",
-            validate: schoolInput => {
-                if (schoolInput) {
+            validate: nameInput => {
+                if (nameInput) {
                     return true;
                 } else {
                     console.log ("Please enter the intern's school!")
