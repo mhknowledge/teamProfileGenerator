@@ -94,7 +94,7 @@ const createEmployee = () => {
         },
         {
             type: 'input',
-            name: 'role',
+            name: 'name',
             message: "What's the employee's name?",
             validate: nameInput => {
                 if (nameInput) {
@@ -184,7 +184,7 @@ const createEmployee = () => {
         team.push(employee); 
 
         if (confirmEmployee) {
-            return makeEmployee(team); 
+            return createEmployee(team); 
         } else {
             return team;
         }
