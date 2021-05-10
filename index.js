@@ -1,9 +1,9 @@
 const makeHTML = require('./src/makeHTML');
 
 //Profiles
-const Engineer = require('./lib/Engineer');
+const Engineer = require('./lib/Engineer').default;
 const Manager = require('./lib/Manager');
-const Intern = require('./lib/Intern');
+const Intern = require('./lib/Intern').default;
 
 //node modules
 const fs = require('fs');
